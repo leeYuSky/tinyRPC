@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="edu.tju.scs.service"/>
+
+    <bean id="zooKeeperManager" class="edu.tju.scs.ZookeeperManager">
+        <constructor-arg name="host" value="47.94.243.191"/>
+    </bean>
+
+    <bean id="serviceRegister" class="edu.tju.scs.ServiceRegistry">
+        <constructor-arg name="zookeeperManager" ref="zooKeeperManager"/>
+    </bean>
+
+    <bean id="serverBean" class="edu.tju.scs.PpcServer">
+        <constructor-arg name="host" value="127.0.0.1"/>
+        <constructor-arg name="port" value="9090"/>
+        <constructor-arg name="serviceRegistry" ref="serviceRegister"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/tinyPRC-serviceManage/tinyPRC-serviceManage.iml" filepath="$PROJECT_DIR$/tinyPRC-serviceManage/tinyPRC-serviceManage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tinyRPC.iml" filepath="$PROJECT_DIR$/tinyRPC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tinyRPC-Client/tinyRPC-Client.iml" filepath="$PROJECT_DIR$/tinyRPC-Client/tinyRPC-Client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tinyRPC-Server/tinyRPC-Server.iml" filepath="$PROJECT_DIR$/tinyRPC-Server/tinyRPC-Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tinyRPC-protocol/tinyRPC-protocol.iml" filepath="$PROJECT_DIR$/tinyRPC-protocol/tinyRPC-protocol.iml" />
+    </modules>
+  </component>
+</project>

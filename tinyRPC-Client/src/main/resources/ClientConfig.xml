@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="zookeeperManager" class="edu.tju.scs.ZookeeperManager">
+        <constructor-arg name="host" value="47.94.243.191"/>
+    </bean>
+
+    <bean id="serviceDiscovery" class="edu.tju.scs.ServiceDiscovery">
+        <constructor-arg name="zookeeperManager" ref="zookeeperManager"/>
+    </bean>
+
+    <bean id="clientBean" class="edu.tju.scs.RpcClient">
+        <constructor-arg name="serviceDiscovery" ref="serviceDiscovery"/>
+    </bean>
+
+    <bean id="clientProxy" class="edu.tju.scs.ClientProxy">
+        <constructor-arg name="proxyObject" ref="clientBean"/>
+    </bean>
+
+</beans>
